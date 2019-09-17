@@ -92,10 +92,20 @@ def move(board, index, player)
 end
 
 def winner(board)
-  if winning_combo = won?(board)
-    board[winning_combo.first]
-  end
-end
+  win_combination = won?(board)
+  if win_combination 
+    index = win_combination[0]
+    board[index]
+  else 
+    nil  
+  end   
+end   
+
+# def winner(board)
+#   if winning_combination = won?(board)
+#     board[winning_combination.first]
+#   end
+# end
 
 
 
