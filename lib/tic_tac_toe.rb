@@ -30,23 +30,19 @@ def position_taken?(board, location)
 end
 
 def valid_move?(board, index)
-  if index < 0 || index > 8
-  false 
-  else
-    board[index] == " "
-  end 
+  index.between?(0,8) && !position_taken?(board, location)
 end 
 
-def turn(board, token = "X") 
+def turn(board) 
   puts "Please enter 1-9:"
-  user_input = gets 
+  user_input = gets.chomp 
   index = input_to_index(user_input)
   if valid_move?(board, index) 
+    token = current_player(board)
     move(board, index, token) 
     display_board(board)
   else 
-    user_input
-    turn(board, token) 
+    turn(board) 
   end   
 end   
 
@@ -94,7 +90,7 @@ def draw?(board)
 end   
 
 def over?(board)
-  full?(board) || won?(board)
+  full?(board) || won?(board) || draw?(board)
 end   
 
 def winner(board)
@@ -108,7 +104,9 @@ def winner(board)
 end   
 
 def play(board)
-  turn(board) until over?(board)
+  until over?(board) == true 
+    turn(board)
+  end 
   if won?(board)
     puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
