@@ -94,9 +94,6 @@ def turn_count(board)
   end
   counter 
 end 
-# def turn_count(board)
-#   board.count { |token| token == 'X' || token == 'O' }
-# end
 
 def move(board,index,token) 
   board[index] = token 
