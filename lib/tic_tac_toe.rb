@@ -81,10 +81,6 @@ def position_taken?(board, location)
   board[location] != " " && board[location] != ""
 end
 
-# def position_taken?(board, index)
-#   board[index] == 'X' || board[index] == 'O'
-# end
-
 def current_player(board)
   turn_count(board).even? ? 'X' : 'O'
 end
