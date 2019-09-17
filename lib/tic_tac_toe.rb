@@ -87,9 +87,9 @@ def turn_count(board)
   board.count { |token| token == 'X' || token == 'O' }
 end
 
-def move(board, index, player)
-  board[index] = player
-end
+# def move(board, index, player)
+#   board[index] = player
+# end
 
 def winner(board)
   win_combination = won?(board)
