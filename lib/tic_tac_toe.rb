@@ -110,6 +110,4 @@ def play(board)
 end
 
 
- 
-
 
