@@ -91,6 +91,10 @@ end
 #   board[index] = player
 # end
 
+def move(board,index,token) 
+  board[index] = token 
+end 
+
 def winner(board)
   win_combination = won?(board)
   if win_combination 
