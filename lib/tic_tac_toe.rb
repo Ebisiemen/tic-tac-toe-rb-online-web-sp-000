@@ -9,14 +9,6 @@ WIN_COMBINATIONS = [
   [6, 4, 2]
 ]
 
-def play(board)
-  turn(board) until over?(board)
-  if won?(board)
-    puts "Congratulations #{winner(board)}!"
-  elsif draw?(board)
-    puts "Cat's Game!"
-  end
-end
 
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -122,9 +114,6 @@ end
 #   board[index] = token 
 # end   
 
-# def position_taken?(board, location)
-#   board[location] != " " && board[location] != ""
-# end
 
 # def valid_move?(board, index)
 #   index.between?(0,8) && !position_taken?(board, location)
